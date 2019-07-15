@@ -2,21 +2,13 @@
 from fastapi import FastAPI
 
 # lib
-from transliterate import lat2cyr
-
-# from spellchecker import lookup_word
+from transliterate import lat2cyr, Direction
 
 # misc
 import logging
-import enum
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
-
-class Direction(str, enum.Enum):
-    lat2cyr = "lat2cyr"
-    cyr2lat = "cyr2lat"
 
 
 app = FastAPI(
@@ -33,6 +25,9 @@ async def transliterate(content: str, direction: Direction):
 
     if direction == Direction.lat2cyr:
         result = await lat2cyr(content)
+        data = {"status": True, "data": result}
+    elif direction == Direction.cyr2lat:
+        result = await cyr2lat(content)
         data = {"status": True, "data": result}
 
     return data
