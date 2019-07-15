@@ -2,10 +2,9 @@
 from fastapi import FastAPI
 
 # lib
-from lib.transliterate import lat2cyr
+from transliterate import lat2cyr
 
-# from lib.spellchecker import lookup_word
-# from lib.spellchecker import lookup_word
+# from spellchecker import lookup_word
 
 # misc
 import logging
