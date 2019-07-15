@@ -1,5 +1,5 @@
 # fastapi
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 # lib
 from transliterate import lat2cyr, Direction
@@ -21,14 +21,14 @@ app = FastAPI(
 @app.post("/transliterate")
 async def transliterate(content: str, direction: Direction):
     logging.info(f"Transliterate direction -> {direction}")
-    data = {"status": False}
+    data = {"status": "failure"}
 
     if direction == Direction.lat2cyr:
         result = await lat2cyr(content)
-        data = {"status": True, "data": result}
+        data = {"status": "success", "data": result}
     elif direction == Direction.cyr2lat:
         result = await cyr2lat(content)
-        data = {"status": True, "data": result}
+        data = {"status": "success", "data": result}
 
     return data
 
