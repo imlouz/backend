@@ -11,3 +11,6 @@ test:
 
 download:
 	wget -x -nH https://imlo.s3.amazonaws.com/wordlist/latin/imlo.txt.gz
+
+clean:
+	find .|rg pyc |xargs rm -rf
