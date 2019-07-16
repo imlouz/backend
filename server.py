@@ -27,8 +27,7 @@ async def transliterate(content: str, direction: Direction):
         result = await lat2cyr(content)
         data = {"status": "success", "direction": direction, "data": result}
     elif direction == Direction.cyr2lat:
-        result = await cyr2lat(content)
-        data = {"status": "success", "direction": direction, "data": result}
+        raise HTTPException(status_code=400, detail="Not implemented yet.")
 
     return data
 
