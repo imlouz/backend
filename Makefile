@@ -8,3 +8,6 @@ run:
 
 test:
 	cd tests/ && python -m unittest 
+
+download:
+	wget -x -nH https://imlo.s3.amazonaws.com/wordlist/latin/imlo.txt.gz
