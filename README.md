@@ -17,6 +17,7 @@
 
 ```bash
 $ make install
+$ make download
 ```
 
 
