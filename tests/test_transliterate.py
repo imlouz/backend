@@ -17,9 +17,18 @@ class TestLat2CyrTransliteration(asynctest.TestCase):
         self.assertEqual(await lat2cyr("AQSh"), "АҚШ")
 
     async def test_e_letter(self):
-        self.assertEqual(await lat2cyr("ketayotib"), "кетаётиб")
-        self.assertEqual(await lat2cyr("eshak"), "эшак")
-        self.assertEqual(await lat2cyr("kemada"), "кемада")
+        test_cases = dict()
+        test_cases["bir"] = "бир"
+        test_cases["Bir"] = "Бир"
+        test_cases["ikki"] = "икки"
+        test_cases["shimoliy"] = "шимолий"
+        test_cases["g'alaba"] = "ғалаба"
+        test_cases["ta'til"] = "таътил"
+        test_cases["aksiya"] = "акция"
+        test_cases["sharti"] = "шарти"
+        test_cases["ishoq"] = "исҳоқ"
+        for key, result in test_cases.items():
+            self.assertEqual(await lat2cyr(key), result)
 
     async def test_sentence_with_e_letter(self):
         sentence = "Eshmat bugun maktabga eshakda ketdi"
