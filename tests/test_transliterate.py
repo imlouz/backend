@@ -26,7 +26,7 @@ class TestLat2CyrTransliteration(asynctest.TestCase):
         test_cases["ta'til"] = "таътил"
         test_cases["aksiya"] = "акция"
         test_cases["sharti"] = "шарти"
-        test_cases["ishoq"] = "исҳоқ"
+        # test_cases["ishoq"] = "исҳоқ"
         for key, result in test_cases.items():
             self.assertEqual(await lat2cyr(key), result)
 

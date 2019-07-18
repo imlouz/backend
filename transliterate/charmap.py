@@ -3,6 +3,7 @@ from collections import OrderedDict
 lat2cyr_charmap = OrderedDict(
     {
         r"i[pP]hone": r"айфон",
+        r"ksiya": r"кция",
         r"ye": r"е",
         r"ya": r"я",
         r"yu": r"ю",
@@ -16,7 +17,9 @@ lat2cyr_charmap = OrderedDict(
         r"o‘": r"ў",
         r"O‘": r"Ў",
         r"g‘": r"ғ",
+        r"g'": r"ғ",
         r"G‘": r"Ғ",
+        r"G'": r"Ғ",
         r"a": r"а",
         r"b": r"б",
         r"c": r"ц",
