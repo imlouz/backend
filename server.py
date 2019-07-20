@@ -1,5 +1,6 @@
 # fastapi
 from fastapi import FastAPI, HTTPException
+from starlette.middleware.cors import CORSMiddleware
 
 # lib
 from transliterate.core import lat2cyr, Direction
@@ -15,6 +16,21 @@ app = FastAPI(
     title="Imlo Project",
     description="Imlo Project Description",
     version="0.1.0",
+)
+
+origins = [
+    "http://api.tekshir.uz",
+    "https://api.tekshir.uz",
+    "http:localhost",
+    "http:localhost:8888",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
