@@ -23,6 +23,7 @@ origins = [
     "https://tekshir.uz",
     "http:localhost",
     "http:localhost:3000",
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
