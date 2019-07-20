@@ -19,8 +19,8 @@ app = FastAPI(
 )
 
 origins = [
-    "http://api.tekshir.uz",
-    "https://api.tekshir.uz",
+    "http://tekshir.uz",
+    "https://tekshir.uz",
     "http:localhost",
     "http:localhost:8888",
 ]
